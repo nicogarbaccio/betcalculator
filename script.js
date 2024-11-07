@@ -67,9 +67,9 @@ function calculateWager() {
         Bet: ${wager.toFixed(2)}
       </div>
       <div>
-        To win ${targetWin.toFixed(
-          2
-        )} (${unitsToWin} units), you should bet ${wager.toFixed(2)}. 
+        To win ${targetWin.toFixed(2)} (${unitsToWin} ${
+    unitsToWin === 1 ? "unit" : "units"
+  }), you should bet ${wager.toFixed(2)}. 
         Your total winnings will be ${winnings.toFixed(2)}.
       </div>
     `;
@@ -82,7 +82,6 @@ if (currentTheme) {
   document.documentElement.setAttribute("data-theme", currentTheme);
   if (currentTheme === "dark") {
     toggleSwitch.checked = true;
-    themeText.textContent = "Light Mode";
   }
 }
 
@@ -92,10 +91,10 @@ function switchTheme(e) {
   if (e.target.checked) {
     document.documentElement.setAttribute("data-theme", "dark");
     localStorage.setItem("theme", "dark");
-    themeText.textContent = "Light Mode";
+    themeText.textContent = "Dark Mode";
   } else {
     document.documentElement.setAttribute("data-theme", "light");
     localStorage.setItem("theme", "light");
-    themeText.textContent = "Dark Mode";
+    themeText.textContent = "Light Mode";
   }
 }

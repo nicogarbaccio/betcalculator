@@ -112,8 +112,9 @@ body {
     color: white;
     border: none;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
+    font-weight: bold;
   }
   
   #result {
@@ -124,7 +125,7 @@ body {
   }
 
   .bet-amount {
-    color: green;
+    color: var(--bet-amount-color);
     font-size: 1.2em;
     margin-bottom: 10px;
   }
@@ -136,6 +137,7 @@ body {
     --container-bg: white;
     --container-shadow: rgba(0, 0, 0, 0.1);
     --input-border: #ccc;
+    --bet-amount-color: #008000;
   }
   
   [data-theme="dark"] {
@@ -145,6 +147,7 @@ body {
     --container-bg: #444;
     --container-shadow: rgba(0, 0, 0, 0.3);
     --input-border: #666;
+    --bet-amount-color: #4CAF50;
   }
   
   body {
@@ -159,7 +162,6 @@ body {
     color: var(--text-color);
     transition: all 0.3s ease;
   }
-  
   .theme-switch-wrapper {
     position: fixed;
     top: 20px;
@@ -168,8 +170,29 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    z-index: 100;
   }
   
+/* Add these media queries at the bottom of styles.css */
+@media screen and (max-width: 768px) {
+  .theme-switch-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .container {
+    margin-top: 60px;
+    width: calc(100% - 2rem);
+    padding: 1.5rem;
+  }
+
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+}
   .theme-switch {
     display: inline-block;
     height: 34px;
