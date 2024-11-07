@@ -70,7 +70,7 @@ function calculateWager() {
         To win ${targetWin.toFixed(2)} (${unitsToWin} ${
     unitsToWin === 1 ? "unit" : "units"
   }), you should bet ${wager.toFixed(2)}. 
-        Your total winnings will be ${winnings.toFixed(2)}.
+        Your total winnings would be ${winnings.toFixed(2)}.
       </div>
     `;
 }
